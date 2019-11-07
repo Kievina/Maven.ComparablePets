@@ -9,13 +9,11 @@ import java.util.Scanner;
 
 public class Application {
     private static Scanner input = new Scanner(System.in);
-    private static Integer numberOfPets;
     private static ArrayList<Pet> listOfPets = new ArrayList<Pet>();
 
     public static void main(String[] args) {
         System.out.println("How many pets do you have?");
         Integer numberOfPets = input.nextInt();
-
 
         for (int i = 0; i < numberOfPets; i++) {
             String petType = getPetType().toLowerCase();
@@ -37,10 +35,7 @@ public class Application {
         for (Pet pet : listOfPets) {
             System.out.println(pet.getName() + " : " + pet.speak());
         }
-
-
     }
-
 
     public static String getPetType() {
         System.out.println("What is the type of your pet?");
@@ -54,23 +49,10 @@ public class Application {
         return nameOfPet;
     }
 
-    public static ArrayList<Pet> nameThenTypeSort(ArrayList<Pet> pets) {
-        Collections.sort(pets, new SortPetsByType());
-        Collections.sort(pets, new SortPetsByName());
-        return pets;
-        /*for (Pet pet : listOfPets) {
-            System.out.println(pet.getName() + " : " + pet.getClass().getSimpleName());
-        }*/
-    }
-
     public static ArrayList<Pet> typeThenNameSort(ArrayList<Pet> pets) {
         Collections.sort(pets, new SortPetsByName());
         Collections.sort(pets, new SortPetsByType());
-
         return pets;
-        /*for (Pet pet : listOfPets) {
-            System.out.println(pet.getName() + " : " + pet.getClass().getSimpleName());
-        }*/
     }
 }
 

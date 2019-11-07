@@ -7,4 +7,10 @@ public class Cat extends Pet {
     public String speak() {
         return "Meow!";
     }
+    public int compareTo(Pet o) {
+        if(this.getName().compareTo(o.getName()) != 0)
+            return this.getName().compareTo(o.getName());
+        else
+            return this.getClass().getSimpleName().compareTo(o.getClass().getSimpleName());
+    }
 }
